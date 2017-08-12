@@ -1,5 +1,3 @@
-<div class="container">
-  
 <%= form_for(@contact, url: confirm_contacts_path) do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
@@ -24,5 +22,3 @@
   <br>
   <%= f.submit '確認する', class: 'btn btn-primary btn-block' %>
 <% end %>
-
-</div>
