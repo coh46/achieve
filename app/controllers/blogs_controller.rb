@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy]
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order(updated_at: :desc)
   end
 
   def new
@@ -30,6 +30,7 @@ class BlogsController < ApplicationController
 
   def update
     @blog = Blog.new(blogs_params)
+    @blog.user_id = current_user.id
     @blog.update(blogs_params)
     if @blog.save
       redirect_to blogs_path, notice: "ブログを編集しました！"
