@@ -29,10 +29,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @blog = Blog.new(blogs_params)
-    @blog.user_id = current_user.id
-    @blog.update(blogs_params)
-    if @blog.save
+    if @blog.update(blogs_params)
       redirect_to blogs_path, notice: "ブログを編集しました！"
     else
       render :edit
