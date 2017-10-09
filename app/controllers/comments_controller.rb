@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
         format.js { render :index }
       else
-        format.html { render :new }
+        format.js { render :index }
       end
     end
   end
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
         format.js { render :index }
       else
-        format.html { render :new }
+        format.js { render :index }
       end
     end
   end
