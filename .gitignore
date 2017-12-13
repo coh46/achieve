@@ -14,3 +14,5 @@
 
 #dotenv-rails
 .env
+
+achieve-key.pem
